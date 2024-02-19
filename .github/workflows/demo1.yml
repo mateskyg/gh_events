@@ -5,7 +5,9 @@ on:
       - opened
       - edited
     branches: 
-      - dev
+      - master
+      - 'dev-*' 
+      - 'feat/**'   # 2 astericks allow for slashes in pattern
   workflow_dispatch: 
   push: 
     branches: 

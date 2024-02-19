@@ -4,8 +4,16 @@ on:
     types: 
       - opened
       - edited
+    branches: 
+      - dev
   workflow_dispatch: 
-
+  push: 
+    branches: 
+      - master
+      - 'dev-*' 
+      - 'feat/**'   # 2 astericks allow for slashes in pattern
+    paths-ignore: 
+      - 'github/workflows/*'   # changes to this path won't trigger
 jobs:
   deploy:
     runs-on: ubuntu-latest
